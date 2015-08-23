@@ -5,12 +5,12 @@ A docker container for Mumble Server configured with environment variables
 ## Prerequisites
 
 1. Install [Docker](http://docker.io/).
-2. Make .znc container: `docker run -v /mumble-data --name mumble-data busybox echo Data-only container for mumble`
+2. Make data container: `docker run -v /mumble-data --name mumble-data busybox echo Data-only container for mumble`
 
 
 ## Options
 
-if you may use the following env vars to do some initial server setup. After the first run state is maintained via the data container.
+Use the following env var to do some initial server setup. After the first run state is maintained via the data container.
 
     SUPW=superuserpassword
 
