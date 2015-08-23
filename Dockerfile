@@ -1,18 +1,14 @@
-FROM ubuntu
-MAINTAINER Johan Haals <johan@haals.se>
+FROM ubuntu:14.04
+MAINTAINER Phil Hayton "p.j.hayton@hotmail.com"
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor ruby mumble-server libsqlite3-dev ruby-dev build-essential
-
-RUN gem install data_mapper --no-rdoc --no-ri
-RUN gem install dm-sqlite-adapter --no-rdoc --no-ri
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor mumble-server
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN useradd mumble
 ADD start.sh /
-ADD mumble.rb /
-ADD mumble-server.ini /
+ADD mumble-server.ini.default /
 RUN chmod +x /start.sh
-
 
 EXPOSE 64738
 CMD ["/start.sh"]

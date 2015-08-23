@@ -1,11 +1,11 @@
 # Murmur configuration file.
-database=/var/lib/mumble-server/mumble-server.sqlite
+database=/mumble-data/mumble-server.sqlite
 dbus=system
 ice="tcp -h 127.0.0.1 -p 6502"
 icesecretwrite=
-logfile=/var/log/mumble-server/mumble-server.log
+logfile=/mumble-data/mumble-server.log
 pidfile=/var/run/mumble-server/mumble-server.pid
-welcometext="<br />Welcome to the internet"
+welcometext="<h1>Welcome to mumble on docker!</h1>"
 port=64738
 serverpassword=
 
